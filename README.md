@@ -1,2 +1,2 @@
 # skiplist
-fast and straightforward non thread-safe skiplist
+fast and straightforward non threadsafe skiplist
