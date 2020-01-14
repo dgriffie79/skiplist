@@ -1,7 +1,7 @@
 # skiplist
 A fast and straightforward non-threadsafe skiplist. Supports "Get", "Set", and "Del" operations. Keys are uint64 and unique, with math.MaxUint64 used as a sentinel, which suits my current project. There is also the start of a finger implentation which is not fully fleshed out.
 
-This is faster and has a smaller memory footprint than all of the skiplists found at https://github.com/MauriceGit/skiplist-survey. The main reason is that this uses the "naive" skiplist structure, where each node has a right and down pointer. Other implementations use nodes with a slice of pointers, which is inefficient because of the memory overhead and additional indirection during horizontal traversal. A little math will show that there is less memory used with the naive implementation for P <= .5, and profiling confirms it.
+This is 10-20% faster and has a smaller memory footprint than all of the skiplists found at https://github.com/MauriceGit/skiplist-survey. The main reason is that this uses the "naive" skiplist structure, where each node has a right and down pointer. Other implementations use nodes with a slice of pointers, which is inefficient because of the memory overhead and additional indirection during horizontal traversal. A little math will show that there is less memory used with the naive implementation for P <= .5, and profiling confirms it.
 
 I have also tested when compiled to .wasm, and it is about twice as fast as the next closest implementation.
 
